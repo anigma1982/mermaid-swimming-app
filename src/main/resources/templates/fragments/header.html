@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="header" class="navbar">
+    <!-- Logo Section -->
+    <a th:href="@{/home}">
+        <img th:src="@{/images/mermaid-logo.jpg}" alt="MSC Logo" class="navbar-logo"/>
+    </a>
+
+    <!-- Navigation Links -->
+    <a th:href="@{/home}">Home</a>
+    <a th:href="@{/about}">About Us</a>
+    <a th:href="@{/careers}">Careers</a>
+    <a th:href="@{/courses}">Courses</a>
+
+    <!-- Right-aligned links -->
+    <div class="navbar-right">
+        <a th:href="@{/login}">Logout</a>
+    </div>
+</div>
+
+</body>
+</html>

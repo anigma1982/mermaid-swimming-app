@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Mermaid Swimming Class</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <style>
+        .container { padding: 20px; max-width: 900px; margin: auto; }
+        .about-content { background-color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; line-height: 1.6; }
+        .gallery-container { padding: 20px; max-width: 1200px; margin: 20px auto; text-align: center; }
+        .gallery-container h2 { color: #333; }
+        .image-gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .gallery-item img { width: 250px; height: 180px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.2s; }
+        .gallery-item img:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+
+<div th:replace="~{fragments/header :: header}"></div>
+
+<div class="container">
+    <div class="about-content">
+        <h2>About Mermaid Swimming Class</h2>
+        <p>
+            Welcome to Mermaid Swimming Class (MSC), where we believe swimming is a vital life skill and a source of endless fun.
+            Founded in 2010, our mission has been to provide high-quality swimming instruction in a safe, encouraging, and positive environment.
+        </p>
+        <p>
+            Our certified instructors are passionate about teaching and are trained to work with swimmers of all ages and abilities,
+            from nervous beginners to aspiring competitive athletes. We focus on building confidence in the water through a structured,
+            yet fun, curriculum.
+        </p>
+    </div>
+
+    <!-- Picture Gallery Section -->
+    <div class="gallery-container">
+        <h2>Our Happy Swimmers</h2>
+        <div class="image-gallery">
+            <div th:each="image : ${galleryImages}" class="gallery-item">
+                <img th:src="@{${image}}" alt="A happy kid swimming">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
+</html>

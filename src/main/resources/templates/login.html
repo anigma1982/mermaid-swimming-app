@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - MSC</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #4fc3f7 0%, #0288d1 100%);
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url('/images/Swim1.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            z-index: 0;
+        }
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            z-index: 1;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.97);
+            padding: 40px 32px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 123, 255, 0.18);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .login-logo {
+            max-width: 120px;
+            margin-bottom: 18px;
+        }
+        .login-container h2 {
+            margin-bottom: 22px;
+            color: #0288d1;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 16px;
+            border: 1px solid #b3e5fc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+            background: #e1f5fe;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 6px;
+            background: linear-gradient(90deg, #00bcd4 0%, #0288d1 100%);
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .login-container button:hover {
+            background: linear-gradient(90deg, #0288d1 0%, #00bcd4 100%);
+        }
+        .error {
+            color: #d93025;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+        .login-links {
+            margin-top: 22px;
+            font-size: 15px;
+        }
+        .login-links a {
+            color: #00bcd4;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+        .login-links a:hover {
+            text-decoration: underline;
+            color: #0288d1;
+        }
+    </style>
+</head>
+<body>
+<div class="login-container">
+    <img th:src="@{/images/mermaid-logo.jpg}" alt="MSC Logo" class="login-logo"/>
+    <h2>Member Login</h2>
+    <div th:if="${param.error}" class="error">
+        Invalid username or password.
+    </div>
+    <form th:action="@{/login}" method="post">
+        <div>
+            <input type="text" name="username" placeholder="Username" required autofocus/>
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="Password" required/>
+        </div>
+        <div>
+            <button type="submit">Sign In</button>
+        </div>
+    </form>
+    <div class="login-links">
+        <a href="#">Forgot Password?</a>
+        <span>|</span>
+        <a th:href="@{/register}">Create Account</a>
+    </div>
+</div>
+<div class="wave">
+    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#4fc3f7" fill-opacity="0.7" d="M0,80 C480,160 960,0 1440,80 L1440,120 L0,120 Z"></path>
+    </svg>
+</div>
+</body>
+</html>
