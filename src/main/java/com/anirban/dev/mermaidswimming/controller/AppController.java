@@ -55,7 +55,7 @@ public class AppController {
         return "home";
     }
 
-    @GetMapping("/home/search")
+    @PostMapping("/home/search")
     public String searchCentres(@RequestParam Integer zip, Model model){
         List<Centre> centres = centreRepository.findByZip(zip);
         model.addAttribute("centres", centres);
@@ -64,13 +64,13 @@ public class AppController {
         return "home";
     }
 
-//    @GetMapping("/register")
-//    public String showRegisterForm(Model model){
-//        model.addAttribute("member", new Member());
-//        return "register";
-//    }
-
     @GetMapping("/register")
+    public String showRegisterForm(Model model){
+        model.addAttribute("member", new Member());
+        return "register";
+    }
+
+    @PostMapping("/register")
     public String processRegistration(@ModelAttribute Member member, RedirectAttributes redirectAttributes){
         Member registeredMember = memberService.registerMember(member);
         redirectAttributes.addFlashAttribute("successMessage", "Welcome! Your Member Id is "+ registeredMember.getId() +
@@ -118,8 +118,9 @@ public class AppController {
     }
 
     @GetMapping("/about")
-    public String learningPath(){
-        return "learning-path";
+    public String about(Model model){
+        addGalleryImagesToModel(model);
+        return "about";
     }
 
     @GetMapping("/careers")

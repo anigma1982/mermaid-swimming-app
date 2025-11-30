@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "members")
 @NoArgsConstructor
@@ -14,9 +17,10 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private String email;
     private String address;
     private String phone;
-    private String level;
+    private String levels;
 
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -25,6 +29,7 @@ public class Member {
             joinColumns = @JoinColumn(name = "member_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id")
     )
+    private List<Course> couurses = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -58,11 +63,27 @@ public class Member {
         this.phone = phone;
     }
 
-    public String getLevel() {
-        return level;
+    public String getLevels() {
+        return levels;
     }
 
-    public void setLevel(String level) {
-        this.level = level;
+    public void setLevels(String levels) {
+        this.levels = levels;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<Course> getCouurses() {
+        return couurses;
+    }
+
+    public void setCouurses(List<Course> couurses) {
+        this.couurses = couurses;
     }
 }

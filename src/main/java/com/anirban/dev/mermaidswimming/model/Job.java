@@ -15,7 +15,7 @@ public class Job {
     @Id
     private Long id;
     private String title;
-    private String locations;
+    private String location;
     private String description;
 
     public Long getId() {
@@ -34,12 +34,12 @@ public class Job {
         this.title = title;
     }
 
-    public String getLocations() {
-        return locations;
+    public String getLocation() {
+        return location;
     }
 
-    public void setLocations(String locations) {
-        this.locations = locations;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getDescription() {
