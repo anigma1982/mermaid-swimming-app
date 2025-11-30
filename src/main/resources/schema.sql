@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS members (
     email VARCHAR(100),
     address VARCHAR(255),
     phone VARCHAR(20),
-    levels VARCHAR(50)
+    level VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS course (

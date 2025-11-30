@@ -20,7 +20,7 @@ public class Member {
     private String email;
     private String address;
     private String phone;
-    private String levels;
+    private String level;
 
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -29,7 +29,7 @@ public class Member {
             joinColumns = @JoinColumn(name = "member_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id")
     )
-    private List<Course> couurses = new ArrayList<>();
+    private List<Course> courses = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -63,12 +63,12 @@ public class Member {
         this.phone = phone;
     }
 
-    public String getLevels() {
-        return levels;
+    public String getLevel() {
+        return level;
     }
 
-    public void setLevels(String levels) {
-        this.levels = levels;
+    public void setLevel(String level) {
+        this.level = level;
     }
 
     public String getEmail() {
@@ -79,11 +79,11 @@ public class Member {
         this.email = email;
     }
 
-    public List<Course> getCouurses() {
-        return couurses;
+    public List<Course> getCourses() {
+        return courses;
     }
 
-    public void setCouurses(List<Course> couurses) {
-        this.couurses = couurses;
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
     }
 }

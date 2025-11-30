@@ -15,10 +15,10 @@ INSERT INTO course (name, course_id, description) VALUES ('Kids Splash', 103, 'K
 INSERT INTO course (name, course_id, description) VALUES ('Competitive Training', 104, 'For Athletes training');
 
 -- Members
-INSERT INTO members (name, email, address, phone, levels) VALUES ('David Muller', 'david@swim.com', '123 Main Street', '555-1001', 'Beginner');
-INSERT INTO members (name, email, address, phone, levels) VALUES ('Rita Calligan', 'rita@swim.com', '456 Oak Avenue', '555-1002', 'Intermediate');
-INSERT INTO members (name, email, address, phone, levels) VALUES ('Kusumita Ghosh', 'kusumita@swim.com', '123 Main Street', '555-1001', 'Advanced');
-INSERT INTO members (name, email, address, phone, levels) VALUES ('Anirban Muller', 'anirban@swim.com', '123 Main Street', '555-1001', 'Intermediate');
+INSERT INTO members (name, email, address, phone, level) VALUES ('David Muller', 'david@swim.com', '123 Main Street', '555-1001', 'Beginner');
+INSERT INTO members (name, email, address, phone, level) VALUES ('Rita Calligan', 'rita@swim.com', '456 Oak Avenue', '555-1002', 'Intermediate');
+INSERT INTO members (name, email, address, phone, level) VALUES ('Kusumita Ghosh', 'kusumita@swim.com', '123 Main Street', '555-1001', 'Advanced');
+INSERT INTO members (name, email, address, phone, level) VALUES ('Anirban Muller', 'anirban@swim.com', '123 Main Street', '555-1001', 'Intermediate');
 
 -- Jobs
 INSERT INTO jobs (title, location, description, address) VALUES ('Lifeguard', 'Aqua Town', 'Pool Safety', '1, Ocean Drive');
